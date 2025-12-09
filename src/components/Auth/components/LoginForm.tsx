@@ -24,7 +24,6 @@ import axios from "axios";
 import { toast } from "sonner";
 import type { StrapiAuthResponse } from "./RegisterForm";
 
-
 export const LoginForm = () => {
   const navigate = useNavigate();
 
@@ -56,9 +55,7 @@ export const LoginForm = () => {
       const {
         data: {
           jwt,
-          user: {
-            username: loggedUsername,
-          },
+          user: { username: loggedUsername },
         },
       } = loginRes as { data: StrapiAuthResponse };
 
@@ -137,6 +134,7 @@ export const LoginForm = () => {
                     <FieldLabel htmlFor="password">Password</FieldLabel>
                     <Input
                       {...field}
+                      type="password"
                       id="password"
                       aria-invalid={fieldState.invalid}
                       placeholder="Password..."

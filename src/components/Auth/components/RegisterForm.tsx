@@ -219,6 +219,7 @@ export const RegisterForm = () => {
                       <Input
                         {...field}
                         id="password"
+                        type="password"
                         placeholder="Password..."
                         aria-invalid={fieldState.invalid}
                         className="placeholder:text-xs"
@@ -242,6 +243,7 @@ export const RegisterForm = () => {
                       <Input
                         {...field}
                         id="confirmPassword"
+                        type="password"
                         placeholder="Confirm Password..."
                         aria-invalid={fieldState.invalid}
                         className="placeholder:text-xs"

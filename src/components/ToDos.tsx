@@ -14,8 +14,6 @@ export const ToDos = () => {
   const completedToDos = toDosList.filter((todo: TodoStrapi) => todo.isDone);
   const pendingToDos = toDosList.filter((todo: TodoStrapi) => !todo.isDone);
 
-  // console.log(toDosList);
-
   return (
     <motion.div
       layout
