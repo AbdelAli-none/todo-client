@@ -1,0 +1,3 @@
+
+
+- Working on when click on logout icon, logout the user

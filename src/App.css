@@ -1,0 +1,16 @@
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hideScrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.marginBlock {
+  margin-block: 20px !important;
+}
