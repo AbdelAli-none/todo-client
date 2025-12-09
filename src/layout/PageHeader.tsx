@@ -16,7 +16,7 @@ export function PageHeader() {
 
   const today = new Date();
 
-  const [dayName, month, dayNumber, ...rest] = String(today).split(" ");
+  const [dayName, month, dayNumber] = String(today).split(" ");
 
   return (
     <header className="flex justify-between items-center bg-muted rounded-lg p-2 shadow-md h-[50px] duration-1000">

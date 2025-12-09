@@ -57,11 +57,7 @@ export const LoginForm = () => {
         data: {
           jwt,
           user: {
-            confirmed,
-            createdAt,
-            email: loggedEmail,
             username: loggedUsername,
-            updatedAt,
           },
         },
       } = loginRes as { data: StrapiAuthResponse };
