@@ -66,7 +66,7 @@ export const RegisterForm = () => {
 
     try {
       const registerRes = await axios.post(
-        "http://localhost:1337/api/auth/local/register",
+        "https://todo-client-vhir.vercel.app/auth/local/register",
         {
           username,
           email,
