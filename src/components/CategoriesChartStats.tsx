@@ -11,7 +11,7 @@ import {
 } from "./UI/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "./UI/chart";
 import { motion } from "framer-motion";
-import NoCompletedToDos from "../Imgs/empty.png";
+import NoCompletedToDos from "src/assets/empty.png";
 import { useCategories } from "@/hooks/Categories/useCategories";
 import { useTodos } from "@/hooks/Todo/useTodos";
 import type { CategoryStrapi, TodoStrapi } from "@/types";
@@ -26,11 +26,11 @@ export const CategoriesChartStats = () => {
         category: category.nameCategory,
         toDoCounts: toDosList.filter(
           (toDo: TodoStrapi) =>
-            toDo.category.nameCategory === category.nameCategory
+            toDo.category.nameCategory === category.nameCategory,
         ).length,
         fill: category.colorCategory,
       };
-    }
+    },
   );
 
   const categoriesConfig = Object.fromEntries(
@@ -40,7 +40,7 @@ export const CategoriesChartStats = () => {
         label: category.nameCategory,
         color: category.colorCategory,
       },
-    ])
+    ]),
   );
 
   const totalToDos = toDosList.length;

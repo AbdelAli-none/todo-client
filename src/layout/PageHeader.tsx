@@ -1,5 +1,5 @@
 import { MainDialogPage } from "@/components/MainDialogPage";
-import logoSrc from "../Imgs/logoApp.png";
+import logoSrc from "src/assets/logoApp.png";
 import { ToggleThemeButton } from "@/components/theme/ToggleThemeButton";
 import { Button } from "@/components/UI/Button";
 import { CalendarDays, CircleUserRound, Plus } from "lucide-react";

@@ -1,4 +1,4 @@
-import noTodos from "@/Imgs/noTodos.png";
+import noTodos from "src/assets/noTodos.png";
 
 import {
   Card,

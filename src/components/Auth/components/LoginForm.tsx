@@ -49,7 +49,7 @@ export const LoginForm = () => {
     try {
       const loginRes = await axios.post(
         "http://localhost:1337/api/auth/local",
-        authLoginInfo
+        authLoginInfo,
       );
 
       const {

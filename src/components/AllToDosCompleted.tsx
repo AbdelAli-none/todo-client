@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import doneToDos from "../Imgs/ok.png";
+import doneToDos from "src/assets/ok.png";
 
 export const AllToDosCompleted = () => {
   return (

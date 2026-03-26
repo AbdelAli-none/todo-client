@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import NoCompletedToDos from "../Imgs/empty.png";
+import NoCompletedToDos from "src/assets/empty.png";
 
 export const NoTasksCompletedIcon = () => {
   return (

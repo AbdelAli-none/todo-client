@@ -33,8 +33,18 @@ export const SelectPriority = React.memo(
     setUpdateToDo,
     setSelectedPriorityId,
   }: SelectPriorityProps) => {
+    const [selected, setSelected] = React.useState<string | undefined>();
+
     const { documentId, iconPriority, levelPriority, valuePriority } =
       selectedPriority || {};
+
+    React.useEffect(() => {
+      if (documentId && iconPriority && levelPriority && valuePriority) {
+        setSelected(
+          `${iconPriority}|${levelPriority}|${documentId}|${valuePriority}`,
+        );
+      }
+    }, [documentId]);
 
     const { setToDo } = useToDoInfo();
     const dispatch = useDispatch();
@@ -52,12 +62,10 @@ export const SelectPriority = React.memo(
 
     return (
       <Select
-        defaultValue={
-          documentId && iconPriority && levelPriority && valuePriority
-            ? `${iconPriority}|${levelPriority}|${documentId}|${valuePriority}`
-            : undefined
-        }
+        value={selected}
         onValueChange={(value) => {
+          setSelected(value);
+          
           const [iconPriority, levelPriority, documentId, valuePriority] =
             value.split("|");
 
@@ -101,19 +109,15 @@ export const SelectPriority = React.memo(
                 } = priorityItem;
                 return (
                   <SelectItem
-                    key={idx}
+                    key={documentId}
                     value={`${iconPriority}|${levelPriority}|${documentId}|${valuePriority}`}
                   >{`${iconPriority} ${capitalize(levelPriority)}`}</SelectItem>
                 );
-              }
+              },
             )}
           </SelectGroup>
         </SelectContent>
       </Select>
     );
-  }
+  },
 );
-
-// <SelectItem value="🟡 medium">🟡 Medium</SelectItem>
-// <SelectItem value="🔴 high">🔴 High</SelectItem>
-// <SelectItem value="🔥 urgent">🔥 Urgent</SelectItem>
