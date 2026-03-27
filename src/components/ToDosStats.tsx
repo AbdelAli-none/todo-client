@@ -62,7 +62,7 @@ export const ToDosStats = () => {
           className="m-auto text-center overflow-hidden p-2 relative h-full flex flex-wrap justify-center items-center"
         >
           <div>
-            <img className="w-[170px] m-auto" src={NoCompletedToDos} />
+            <img className="w-[170px] m-auto" src={`${NoCompletedToDos}`} />
             <p className="text-gray dark:text-gray-200 mt-6 text-sm">
               You haven’t add any tasks yet. Click{" "}
               <span className="bg-green-500 text-white font-semibold px-2 rounded-md">

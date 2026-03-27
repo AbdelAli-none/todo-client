@@ -43,6 +43,8 @@ export const LoginForm = () => {
     },
   });
 
+  // export const API_URL = import.meta.env.production.VITE_API_URL;
+
   const onSubmitLogin = async (data: z.infer<typeof loginSchema>) => {
     const { username, password } = data;
     const authLoginInfo = { identifier: username, password };

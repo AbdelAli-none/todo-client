@@ -1,4 +1,3 @@
-import { Achievements } from "./Achievements";
 import { StreakDays } from "./StreakDays";
 import { useMe } from "@/hooks/useMe";
 import { Button } from "./UI/Button";
@@ -9,6 +8,7 @@ import { ToDosStats } from "./ToDosStats";
 import { UpcomingTodos } from "./UpcomingTodos";
 import { LongestDayStreak } from "./LongestDayStreak";
 import { ClockCard } from "./Clock";
+import { Achievements } from "./Achievements";
 
 export const Dashboard = () => {
   const { data: loggedUser, isLoading, error } = useMe();
