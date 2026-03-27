@@ -65,7 +65,7 @@ export const SelectPriority = React.memo(
         value={selected}
         onValueChange={(value) => {
           setSelected(value);
-          
+
           const [iconPriority, levelPriority, documentId, valuePriority] =
             value.split("|");
 
@@ -99,22 +99,16 @@ export const SelectPriority = React.memo(
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Levels</SelectLabel>
-            {prioritySelectList.map(
-              (priorityItem: TPriorityItemStrapi, idx: string) => {
-                const {
-                  iconPriority,
-                  levelPriority,
-                  documentId,
-                  valuePriority,
-                } = priorityItem;
-                return (
-                  <SelectItem
-                    key={documentId}
-                    value={`${iconPriority}|${levelPriority}|${documentId}|${valuePriority}`}
-                  >{`${iconPriority} ${capitalize(levelPriority)}`}</SelectItem>
-                );
-              },
-            )}
+            {prioritySelectList.map((priorityItem: TPriorityItemStrapi) => {
+              const { iconPriority, levelPriority, documentId, valuePriority } =
+                priorityItem;
+              return (
+                <SelectItem
+                  key={documentId}
+                  value={`${iconPriority}|${levelPriority}|${documentId}|${valuePriority}`}
+                >{`${iconPriority} ${capitalize(levelPriority)}`}</SelectItem>
+              );
+            })}
           </SelectGroup>
         </SelectContent>
       </Select>
