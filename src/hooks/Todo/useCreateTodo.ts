@@ -9,6 +9,8 @@ export const useCreateTodo = (
 ) => {
   const queryClient = useQueryClient();
 
+  console.log("category:", selectedCategoryId, "priority:", selectedPriorityId);
+
   return useMutation({
     // with CUD operations (update, delete, create)
     mutationFn: async (dataTodo: TodoStrapi) => {
