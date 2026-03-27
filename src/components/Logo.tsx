@@ -1,4 +1,4 @@
-import logoSrc from "src/assets/logoLink.png";
+import logoSrc from "../assets/logoLink.png";
 
 type LogoProps = {
   className?: string;
