@@ -16,7 +16,9 @@ export const Content = React.memo(() => {
       >
         <PageHeader />
         <ScrollArea className="h-full w-full rounded-md">
-          <div className="h-[calc(100%-60px)] overflow-y-auto my-2 bg-cover rounded-xl hideScrollbar duration-1000 bg-[url('/dashboard-light.png')] dark:bg-[url('/dashboard-dark.png')]">
+          <div
+            className={`h-[calc(100%-60px)] overflow-y-auto my-2 bg-cover rounded-xl hideScrollbar duration-1000 bg-[url('/dashboard-light.png')] dark:bg-[url('/dashboard-dark.png')]`}
+          >
             <Outlet />
           </div>
         </ScrollArea>

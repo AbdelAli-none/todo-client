@@ -18,7 +18,7 @@ import {
 } from "./UI/card";
 
 import { motion } from "framer-motion";
-import NoCompletedToDos from "src/assets/emptyTwo.png";
+import NoCompletedToDos from "../assets/emptyTwo.png";
 import { useTodos } from "@/hooks/Todo/useTodos";
 import type { TodoStrapi } from "@/types";
 
