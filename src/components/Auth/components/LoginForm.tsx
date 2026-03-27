@@ -92,7 +92,9 @@ export const LoginForm = () => {
       transition={{ duration: 1, delay: 0.3 }}
     >
       <Card className="w-full gap-0 sm:max-w-md pb-3 relative border-none shadow-2xl">
-        <Logo className="w-8 h-8 absolute left-1/2 -top-4 -translate-x-1/2 rounded-full border-2 border-primary" />
+        <div className="relative">
+          <Logo className="w-8 h-8 absolute left-1/2 -top-4 -translate-x-1/2 rounded-full border-2 border-primary" />
+        </div>
         <CardHeader className="text-center">
           <CardTitle>Welcome Back!</CardTitle>
           <CardDescription>
