@@ -1,9 +1,11 @@
-const API = "http://localhost:1337/api"; // Change to your URL
+import { API_URL } from "@/lib/API_LINK";
+
+const API = `${API_URL}/api`; // Change to your URL
 const getJwt = () => localStorage.getItem("jwt");
 
 export const toggleTaskComplete = async (
   documentId: string,
-  currentlyCompleted: boolean
+  currentlyCompleted: boolean,
 ) => {
   const now = new Date().toISOString();
 

@@ -1,3 +1,4 @@
+import { API_URL } from "@/lib/API_LINK";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -7,7 +8,7 @@ export const usePriorities = () => {
     queryKey: ["priorities"],
     queryFn: async () => {
       const res = await axios.get(
-        "http://localhost:1337/api/priorities?fields[0]=iconPriority&fields[1]=levelPriority&fields[2]=valuePriority&sort[0]=valuePriority:desc",
+        `${API_URL}/api/priorities?fields[0]=iconPriority&fields[1]=levelPriority&fields[2]=valuePriority&sort[0]=valuePriority:desc`,
         {
           headers: {
             Authorization: `Bearer ${jwt}`,

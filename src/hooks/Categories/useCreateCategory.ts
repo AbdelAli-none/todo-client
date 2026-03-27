@@ -1,3 +1,4 @@
+import { API_URL } from "@/lib/API_LINK";
 import type { CategoryStrapi } from "@/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
@@ -18,16 +19,12 @@ export const useCreateCategory = () => {
         },
       };
 
-      const res = await axios.post(
-        "http://localhost:1337/api/categories",
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${jwt}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const res = await axios.post(`${API_URL}/api/categories`, payload, {
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+          "Content-Type": "application/json",
+        },
+      });
       return res.data.data;
     },
 

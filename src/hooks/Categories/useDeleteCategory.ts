@@ -1,3 +1,4 @@
+import { API_URL } from "@/lib/API_LINK";
 import type { TodoStrapi } from "@/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
@@ -8,13 +9,13 @@ export const useDeleteCategory = () => {
   return useMutation({
     mutationFn: async (documentId: string) => {
       const todosResponse = await axios.get(
-        "http://localhost:1337/api/todos?populate[category][fields]=nameCategory,colorCategory,iconCategory&populate[priority][fields]=iconPriority,levelPriority,valuePriority&fields=description,isDone,title&sort=priority.valuePriority:desc", // ← your real endpoint
+        `${API_URL}/api/todos?populate[category][fields]=nameCategory,colorCategory,iconCategory&populate[priority][fields]=iconPriority,levelPriority,valuePriority&fields=description,isDone,title&sort=priority.valuePriority:desc`, // ← your real endpoint
         {
           params: {
             "filters[category][documentId][$eq]": documentId,
           },
           headers: { Authorization: `Bearer ${jwt}` },
-        }
+        },
       );
 
       const todosToDelete = todosResponse.data.data; // in here to make a valid data to consume
@@ -23,15 +24,15 @@ export const useDeleteCategory = () => {
       if (todosToDelete.length > 0) {
         await Promise.all(
           todosToDelete.map((todo: TodoStrapi) =>
-            axios.delete(`http://localhost:1337/api/todos/${todo.documentId}`, {
+            axios.delete(`${API_URL}/api/todos/${todo.documentId}`, {
               headers: { Authorization: `Bearer ${jwt}` },
-            })
-          )
+            }),
+          ),
         );
       }
 
       // finally delete the category itself!
-      await axios.delete(`http://localhost:1337/api/categories/${documentId}`, {
+      await axios.delete(`${API_URL}/api/categories/${documentId}`, {
         headers: {
           Authorization: `Bearer ${jwt}`,
         },

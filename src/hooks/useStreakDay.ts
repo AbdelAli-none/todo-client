@@ -1,7 +1,8 @@
 // src/hooks/useStreakFromTasks.ts
+import { API_URL } from "@/lib/API_LINK";
 import { useState, useEffect } from "react";
 
-const STRAPI_URL = "http://localhost:1337/api"; // Change once
+const STRAPI_URL = `${API_URL}/api`; // Change once
 const getToken = () => localStorage.getItem("jwt"); // or your auth method
 
 interface Streak {
@@ -30,7 +31,7 @@ export const useStreakDay = () => {
           headers: {
             Authorization: `Bearer ${getToken()}`,
           },
-        }
+        },
       );
 
       const { data } = await res.json();
@@ -62,7 +63,7 @@ export const useStreakDay = () => {
           const diffDays = Math.round(
             (new Date(String(date)).getTime() -
               new Date(String(prev)).getTime()) /
-              86400000
+              86400000,
           );
           if (diffDays === 1) {
             temp++;

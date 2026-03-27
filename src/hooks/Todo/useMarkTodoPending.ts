@@ -1,3 +1,4 @@
+import { API_URL } from "@/lib/API_LINK";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -8,7 +9,7 @@ export const useMarkTodoPending = (todoDocumentId: string) => {
   return useMutation({
     mutationFn: async () => {
       const res = await axios.put(
-        `http://localhost:1337/api/todos/${todoDocumentId}`,
+        `${API_URL}/api/todos/${todoDocumentId}`,
         {
           data: {
             isDone: false,
@@ -18,7 +19,7 @@ export const useMarkTodoPending = (todoDocumentId: string) => {
           headers: {
             Authorization: `Bearer ${jwt}`,
           },
-        }
+        },
       );
 
       return res.data.data;

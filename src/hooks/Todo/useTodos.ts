@@ -1,3 +1,4 @@
+import { API_URL } from "@/lib/API_LINK";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -7,18 +8,18 @@ export const useTodos = () => {
   return useQuery({
     queryKey: ["todos"],
     queryFn: async () => {
-      const meRes = await axios.get("http://localhost:1337/api/users/me", {
+      const meRes = await axios.get(`${API_URL}/api/users/me`, {
         headers: { Authorization: `Bearer ${jwt}` },
       });
       const userId = meRes.data.id;
 
       const res = await axios.get(
-        `http://localhost:1337/api/todos?filters[owner][id][$eq]=${userId}&populate[0]=category&populate[1]=priority&fields=title,description,isDone,completedAt&sort=priority.valuePriority:desc`,
+        `${API_URL}/api/todos?filters[owner][id][$eq]=${userId}&populate[0]=category&populate[1]=priority&fields=title,description,isDone,completedAt&sort=priority.valuePriority:desc`,
         {
           headers: {
             Authorization: `Bearer ${jwt}`,
           },
-        }
+        },
       );
       return res.data.data || [];
     },

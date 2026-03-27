@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useMe } from "../useMe";
+import { API_URL } from "@/lib/API_LINK";
 
-const STRAPI_URL = "http://localhost:1337/api";
+const STRAPI_URL = `${API_URL}/api`;
 
 export const useUpcomingTodos = () => {
   const { data: meInfo, isLoading } = useMe();
@@ -17,7 +18,7 @@ export const useUpcomingTodos = () => {
           headers: {
             Authorization: `Bearer ${jwt}`,
           },
-        }
+        },
       );
       return upcomingTodos.data.data || [];
     },

@@ -1,3 +1,4 @@
+import { API_URL } from "@/lib/API_LINK";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -9,7 +10,7 @@ export const useToggleTodoStatus = (isDone: boolean) => {
   return useMutation({
     mutationFn: async (documentId: string) => {
       const res = await axios.put(
-        `http://localhost:1337/api/todos/${documentId}`,
+        `${API_URL}/api/todos/${documentId}`,
         {
           data: {
             isDone: !isDone,
@@ -20,7 +21,7 @@ export const useToggleTodoStatus = (isDone: boolean) => {
           headers: {
             Authorization: `Bearer ${jwt}`,
           },
-        }
+        },
       );
       return res.data.data;
     },

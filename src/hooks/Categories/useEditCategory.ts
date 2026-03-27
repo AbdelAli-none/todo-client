@@ -1,3 +1,4 @@
+import { API_URL } from "@/lib/API_LINK";
 import type { CategoryStrapi } from "@/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
@@ -10,7 +11,7 @@ export const useEditCategory = (categoryDocumentId: string) => {
       const { colorCategory, iconCategory, nameCategory } = updatedCategory;
 
       const res = await axios.put(
-        `http://localhost:1337/api/categories/${categoryDocumentId}`,
+        `${API_URL}/api/categories/${categoryDocumentId}`,
         {
           data: {
             iconCategory,
@@ -22,7 +23,7 @@ export const useEditCategory = (categoryDocumentId: string) => {
           headers: {
             Authorization: `Bearer ${jwt}`,
           },
-        }
+        },
       );
       return res.data.data;
     },

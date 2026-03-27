@@ -24,6 +24,7 @@ import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { setLoggedUser } from "@/app/features/auth/authSlice";
 import { toast } from "sonner";
+import { API_URL } from "@/lib/API_LINK";
 
 interface StrapiUser {
   username: string;
@@ -66,7 +67,7 @@ export const RegisterForm = () => {
 
     try {
       const registerRes = await axios.post(
-        "http://localhost:1337/api/auth/local/register",
+        `${API_URL}/api/auth/local/register`,
         {
           username,
           email,
@@ -76,7 +77,7 @@ export const RegisterForm = () => {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
 
       const {
@@ -99,7 +100,7 @@ export const RegisterForm = () => {
           confirmed,
           createdAt,
           updatedAt,
-        })
+        }),
       );
 
       localStorage.setItem("token", jwt);

@@ -1,4 +1,5 @@
 // import type { TodoStrapi } from "@/types";
+import { API_URL } from "@/lib/API_LINK";
 import type { TodoStrapi } from "@/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
@@ -14,7 +15,7 @@ export const useEditTodo = (todoDocumentId: string) => {
       // console.log(updatedTodo);
 
       const res = await axios.put(
-        `http://localhost:1337/api/todos/${todoDocumentId}`,
+        `${API_URL}/api/todos/${todoDocumentId}`,
         {
           data: {
             title,
@@ -28,7 +29,7 @@ export const useEditTodo = (todoDocumentId: string) => {
           headers: {
             Authorization: `Bearer ${jwt}`,
           },
-        }
+        },
       );
 
       return res.data.data;

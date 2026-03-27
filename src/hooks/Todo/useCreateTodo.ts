@@ -1,10 +1,11 @@
+import { API_URL } from "@/lib/API_LINK";
 import type { TodoStrapi } from "@/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 export const useCreateTodo = (
   selectedCategoryId: string,
-  selectedPriorityId: string
+  selectedPriorityId: string,
 ) => {
   const queryClient = useQueryClient();
 
@@ -14,7 +15,7 @@ export const useCreateTodo = (
       const { title, description, isDone } = dataTodo;
       const jwt = localStorage.getItem("token");
 
-      const me = await fetch("http://localhost:1337/api/users/me", {
+      const me = await fetch(`${API_URL}/api/users/me`, {
         headers: { Authorization: `Bearer ${jwt}` },
       }).then((r) => r.json());
 
@@ -29,7 +30,7 @@ export const useCreateTodo = (
         },
       };
 
-      const res = await axios.post("http://localhost:1337/api/todos", payload, {
+      const res = await axios.post(`${API_URL}/api/todos`, payload, {
         headers: {
           Authorization: `Bearer ${jwt}`,
           "Content-Type": "application/json",

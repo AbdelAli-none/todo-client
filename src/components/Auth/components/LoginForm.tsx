@@ -23,6 +23,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "sonner";
 import type { StrapiAuthResponse } from "./RegisterForm";
+import { API_URL } from "@/lib/API_LINK";
 
 export const LoginForm = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ export const LoginForm = () => {
 
     try {
       const loginRes = await axios.post(
-        "http://localhost:1337/api/auth/local",
+        `${API_URL}/api/auth/local`,
         authLoginInfo,
       );
 

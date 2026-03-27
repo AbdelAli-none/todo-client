@@ -1,3 +1,4 @@
+import { API_URL } from "@/lib/API_LINK";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -7,7 +8,7 @@ export const useDeleteTodo = () => {
 
   return useMutation({
     mutationFn: async (documentId: string) => {
-      await axios.delete(`http://localhost:1337/api/todos/${documentId}`, {
+      await axios.delete(`${API_URL}/api/todos/${documentId}`, {
         headers: {
           Authorization: `Bearer ${jwt}`,
         },
