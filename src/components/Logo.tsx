@@ -5,5 +5,5 @@ type LogoProps = {
 };
 
 export const Logo = ({ className }: LogoProps) => {
-  return <img src={"/logoLink.png"} alt="logo" className={className} />;
+  return <img src={"/logoApp.png"} alt="logo" className={className} />;
 };

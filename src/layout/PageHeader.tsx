@@ -1,5 +1,5 @@
 import { MainDialogPage } from "@/components/MainDialogPage";
-import logoSrc from "../assets/logoApp.png";
+// import logoSrc from "../assets/logoApp.png";
 import { ToggleThemeButton } from "@/components/theme/ToggleThemeButton";
 import { Button } from "@/components/UI/Button";
 import { CalendarDays, CircleUserRound, Plus } from "lucide-react";
@@ -10,6 +10,7 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
+import { Logo } from "@/components/Logo";
 
 export function PageHeader() {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export function PageHeader() {
   return (
     <header className="flex justify-between items-center bg-muted rounded-lg p-2 shadow-md h-[50px] duration-1000">
       <div className="w-[90px] cursor-pointer mt-1 -ml-1">
-        <img src={logoSrc} alt="logo" />
+        <Logo />
       </div>
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <CalendarDays className="w-6 h-6 hidden md:block" />

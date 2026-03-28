@@ -136,7 +136,10 @@ export const RegisterForm = () => {
       transition={{ duration: 1, delay: 0.3 }}
     >
       <Card className="w-full sm:max-w-md pb-3 relative border-none shadow-2xl">
-        <Logo className="w-8 h-8 absolute left-1/2 -top-4 -translate-x-1/2 rounded-full border-2 border-primary" />
+        <img
+          src="/logoLink.png"
+          className="w-8 h-8 absolute left-1/2 -top-4 -translate-x-1/2 rounded-full border-2 border-primary"
+        />
         <CardHeader className="text-center mb-3">
           <CardTitle>
             Welcome To <span className="text-primary">Taskify</span>!
