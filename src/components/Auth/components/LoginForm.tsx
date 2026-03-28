@@ -16,7 +16,6 @@ import {
 import { Field, FieldError, FieldGroup, FieldLabel } from "../../UI/field";
 import { Input } from "../../UI/input";
 import { loginSchema } from "@/validations/loginSchema";
-import { Logo } from "@/components/Logo";
 import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";

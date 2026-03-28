@@ -16,7 +16,6 @@ import { Field, FieldError, FieldGroup, FieldLabel } from "../../UI/field";
 import { Input } from "../../UI/input";
 import { InputGroup } from "../../UI/input-group";
 import { registerSchema } from "@/validations/registerSchema";
-import { Logo } from "@/components/Logo";
 import { Link } from "react-router";
 import axios from "axios";
 import { useNavigate } from "react-router";
